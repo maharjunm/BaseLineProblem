@@ -8,7 +8,7 @@ public class ImportedItemsTest {
 
     @Test
     public void shouldReturnTheTaxPercentAs5() {
-        ImportedItems importedItems = new ImportedItems();
+        ImportedItems importedItems = new ImportedExtemptionItems();
 
         assertEquals(5,importedItems.getTaxPercent());
     }

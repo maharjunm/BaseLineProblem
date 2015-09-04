@@ -14,7 +14,7 @@ public class Parser {
             String[] list = item.split(" ");
             double rate = Double.parseDouble(list[list.length - 1]);
 
-            Item itemType = new ImportedItems();
+            Item itemType = new ImportedExtemptionItems();
             TaxCalculator taxCalculator = new TaxCalculator(itemType.getTaxPercent(), rate);
             double finalRate = taxCalculator.calculateTax() + rate;
             finalRate = round(finalRate * 100) / 100.0;
