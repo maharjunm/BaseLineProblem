@@ -9,8 +9,14 @@ public class Parser {
 
     public double calculateTax() {
         if (item.contains("imported")) {
-            Item itemType = new ImportedItems();
+            String[] list = item.split(" ");
+            double rate = Double.parseDouble(list[list.length - 1]);
 
+            Item itemType = new ImportedItems();
+            TaxCalculator taxCalculator = new TaxCalculator(itemType.getTaxPercent(), rate);
+            double finalRate = taxCalculator.calculateTax() + rate;
+
+            return finalRate;
         }
 
         return 0;
