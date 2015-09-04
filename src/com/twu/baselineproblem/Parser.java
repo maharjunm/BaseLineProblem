@@ -16,42 +16,32 @@ public class Parser {
                 double rate = Double.parseDouble(list[list.length - 1]);
 
                 Item itemType = new ImportedExtemptionItems();
-                TaxCalculator taxCalculator = new TaxCalculator(itemType.getTaxPercent(), rate);
-                double finalRate = taxCalculator.calculateTax() + rate;
-                finalRate = round(finalRate * 100) / 100.0;
-
-                return finalRate;
+                return getFinalRate(rate, itemType);
             }
             String[] list = item.split(" ");
             double rate = Double.parseDouble(list[list.length - 1]);
 
             Item itemType = new ImportedOtherGoods();
-            TaxCalculator taxCalculator = new TaxCalculator(itemType.getTaxPercent(), rate);
-            double finalRate = taxCalculator.calculateTax() + rate;
-            finalRate = round(finalRate * 100) / 100.0;
-
-            return finalRate;
+            return getFinalRate(rate, itemType);
         }
         if (item.contains("chocolate") || item.contains("pills") || item.contains("book")) {
             String[] list = item.split(" ");
             double rate = Double.parseDouble(list[list.length - 1]);
 
             Item itemType = new TaxExemptionGoods();
-            TaxCalculator taxCalculator = new TaxCalculator(itemType.getTaxPercent(), rate);
-            double finalRate = taxCalculator.calculateTax() + rate;
-            finalRate = round(finalRate * 100) / 100.0;
-
-            return finalRate;
+            return getFinalRate(rate, itemType);
         }
         String[] list = item.split(" ");
         double rate = Double.parseDouble(list[list.length - 1]);
 
         Item itemType = new OtherNonImportedGoods();
-        int tax = 0;
+        return getFinalRate(rate, itemType);
+    }
+
+    private double getFinalRate(double rate, Item itemType) {
         TaxCalculator taxCalculator = new TaxCalculator(itemType.getTaxPercent(), rate);
         double finalRate = taxCalculator.calculateTax() + rate;
         finalRate = round(finalRate * 100) / 100.0;
-        System.out.println(finalRate);
 
         return finalRate;
     }
