@@ -47,4 +47,11 @@ public class ParserTest {
 
         assertEquals(new Double(11.81), parser.calculateTax(), 0.00d);
     }
+
+    @Test
+    public void shouldReturnTheTaxPercentageForImportedItemsAndOtherItems() {
+        Parser parser = new Parser("1 imported bottle of perfume at 27.99");
+
+        assertEquals(new Double(32.19), parser.calculateTax(), 0.00d);
+    }
 }
