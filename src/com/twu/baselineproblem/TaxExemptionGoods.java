@@ -1,9 +1,11 @@
 package com.twu.baselineproblem;
 
-public class TaxExemptionGoods {
+public class TaxExemptionGoods implements Item {
     private final int taxPercent = 0;
 
-    public int getTaxPercentage() {
+
+    @Override
+    public int getTaxPercent() {
         return taxPercent;
     }
 }

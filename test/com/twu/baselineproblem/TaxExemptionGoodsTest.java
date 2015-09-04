@@ -11,6 +11,6 @@ public class TaxExemptionGoodsTest {
     public void shouldReturnTheTaxAsZeroForExemptionGOODs() {
         TaxExemptionGoods taxExemptionGoods = new TaxExemptionGoods();
 
-        assertEquals(0, taxExemptionGoods.getTaxPercentage());
+        assertEquals(0, taxExemptionGoods.getTaxPercent());
     }
 }
