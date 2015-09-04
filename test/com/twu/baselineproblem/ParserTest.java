@@ -54,4 +54,11 @@ public class ParserTest {
 
         assertEquals(new Double(32.19), parser.calculateTax(), 0.00d);
     }
+
+    @Test
+    public void shouldReturnTheTaxPercentageForImportedItemsAndChocolates() {
+        Parser parser = new Parser("1 imported box of chocolates at 10.00");
+
+        assertEquals(new Double(10.50), parser.calculateTax(), 0.00d);
+    }
 }
