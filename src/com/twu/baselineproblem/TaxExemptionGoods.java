@@ -1,9 +1,9 @@
 package com.twu.baselineproblem;
 
 public class TaxExemptionGoods {
-    private final int taxPercentage = 0;
+    private final int taxPercent = 0;
 
     public int getTaxPercentage() {
-        return taxPercentage;
+        return taxPercent;
     }
 }
