@@ -1,6 +1,6 @@
 package com.twu.baselineproblem;
 
-public class ImportedOtherGoods {
+public class ImportedOtherGoods implements ImportedItems {
     private final int taxPercent = 15;
 
     public int getTaxPercent() {
