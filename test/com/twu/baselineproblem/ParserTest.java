@@ -26,4 +26,11 @@ public class ParserTest {
 
         assertEquals(new Double(0.85), parser.calculateTax(),0.00d);
     }
+
+    @Test
+    public void shouldReturnTheTaxPercentageForNonImportedItemsAndMedicalItems() {
+        Parser parser = new Parser("1 packet of headache pills at 9.75");
+
+        assertEquals(new Double(9.75), parser.calculateTax(),0.00d);
+    }
 }

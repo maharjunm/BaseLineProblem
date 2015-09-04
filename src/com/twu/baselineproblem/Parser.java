@@ -21,7 +21,7 @@ public class Parser {
 
             return finalRate;
         }
-        if(item.contains("chocolate")) {
+        if(item.contains("chocolate") || item.contains("pills")) {
             String[] list = item.split(" ");
             double rate = Double.parseDouble(list[list.length - 1]);
 
