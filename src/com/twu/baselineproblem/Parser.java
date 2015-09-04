@@ -11,7 +11,7 @@ public class Parser {
 
     public double calculateTax() {
         if (item.contains("imported") ) {
-            if(item.contains("book") || item.contains("pills") || item.contains("chocolate")) {
+            if(item.contains("chocolate")) {
                 String[] list = item.split(" ");
                 double rate = Double.parseDouble(list[list.length - 1]);
 
